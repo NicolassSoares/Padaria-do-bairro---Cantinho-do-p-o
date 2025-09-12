@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="image/Pedidos especiais.png">
+    <title>Pedidos especiais</title>
+</head>
+<body>
+    <form id="formPedido">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome..." required><br><br>
+            
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Insira o seu telefone..." required><br><br>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Insira o seu e-mail..." required><br><br>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Insira o seu endereço..." required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes do Pedido</legend>
+            
+            <h3>Faça o seu pedido</h3>
+            <label><input type="radio" name="tipoPedido" value="Coxinha">Coxinha</label>
+            <label><input type="radio" name="tipoPedido" value="PãoQueijo">Pão de quiejo</label>
+            <label><input type="radio" name="tipoPedido" value="Esfirra">Esfirra</label><br><br>
+
+            <label for="saborRecheio">Sabor ou recheio:</label>  
+            <select id="saborrecheio" name="saborRecheio">
+                <option value="Queijo">Queijo</option>
+                <option value="Calabresa">Calabresa</option>
+                <option value="Frango">Frango</option>
+                <option value="Palmito">Palmito</option>
+            </select><br><br>
+
+            <h3>Tamanho</h3>
+            <label><input type="radio" name="tamanho" value="grande">Grande</label>
+            <label><input type="radio" name="tamanho" value="medio">Médio</label>
+            <label><input type="radio" name="tamanho" value="pequeno">Pequeno</label><br><br>
+            <label><input type="radio" name="tamanho" value="festa">Festa</label><br><br>
+
+            <label for="dataEntrega">Data de entrega:</label>
+            <input type="date" id="dataEntrega" name="dataEntrega" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações Adicionais</legend>
+            
+            <label for="observacoes">Observações:</label>
+            <textarea id="observacoes" name="observacoes" rows="3"></textarea><br><br>
+            
+            
+        <button type="submit">Enviar</button>
+    </form>
+
+    <a href="index.html" class="btn-voltar">🏚️</a>
+    <button id="btnTopo">Voltar ao topo</button>
+      
+    <script src="whatsapp-forms.js"></script>
+    <script>
+        window.onscroll = function() {
+            var btnTopo = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        };
+
+        document.getElementById("btnTopo").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>

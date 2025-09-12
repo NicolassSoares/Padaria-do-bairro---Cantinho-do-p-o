@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Padaria Cantinho do pão</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="image/Logo Cantinho do Pão.png">
+</head>
+<body>
+    <header> 
+        <h1>🍞Cantinho do Pão🍞</h1>
+        <nav>
+            <a href="Contato geral.html" target="_blank">Contato geral</a>
+            <a href="Pedidos especiais.html" target="_blank">Pedidos especiais</a>
+            <a href="Feedback.html" target="_blank">Feedback</a> 
+            <a href="Cadastro.html" target="_blank">Cadastro</a> 
+        </nav>
+    </header>
+
+    <section id="Boas-vindas">
+        <h2>Boas Vindas</h2>
+        <input type="text" id="nomeCliente" placeholder="Digite seu nome aqui...">
+        <button id="entrar">Entrar</button>
+        <p id="mensagem"></p>
+    </section>
+
+    <section>
+        <h2>🔎Sobre nós</h2>    
+        <p>Na Cantinho do Pão, acreditamos que cada pão quentinho tem o poder de transformar um simples momento em uma memória especial. Desde o início, nossa missão é oferecer mais do que produtos: queremos proporcionar experiências.</p>
+        <p>Com receitas tradicionais e um toque de criatividade, produzimos diariamente pães artesanais, salgados fresquinhos, preparados com ingredientes selecionados e muito cuidado.</p>
+        <p>Nossa equipe é apaixonada pelo que faz e está sempre pronta para receber você com um sorriso, seja para um café rápido no dia a dia, um encontro com amigos ou para levar o melhor da nossa padaria até a sua casa.</p>
+        <article>  
+            <img src="image/Logo Cantinho do Pão.png " alt="Logo Cantinho do Pão" width="300" height="200">
+        </article>
+    </section>
+
+    <section>
+        <h2>☕Produtos</h2>
+        <article>
+            <img src="image/Pão de queijo.webp" alt="PãoQueijo" width="300" height="150">
+            <img src="image/Esfirra.webp" alt="Esfirra" width="300" height="200">
+            <img src="image/Coxinha.jfif" alt="Coxinha" width="300" height="200">
+            <img src="image/Pães.webp" alt="Pães" width="300" height="200">
+        </article>
+    </section>
+
+    <section>
+        <h3>📃Cardápio</h3>
+        <table border="1">
+            <tr>
+                <th>Categoria</th>
+                <th>Produto</th>
+                <th>Descrição</th>
+                <th>Preço</th> 
+                <th>Ações</th>
+                <th>Informações</th>
+            </tr>
+            <tr>
+                <td>Salgado</td>
+                <td>Pão de queijo</td>
+                <td>Pão do amanhã</td>
+                <td>R$ 2,00</td>
+                <td><button class="comprar" data-produto="PãoQueijo" data-preco="2.00">Comprar</button></td>
+                <td>  <button onclick="alert('Mais que um salgado, uma experiência autêntica! Nosso pão de queijo é produzido diariamente com a receita tradicional mineira, garantindo a casca dourada e levemente crocante por fora e o interior macio, elástico e irresistivelmente cheiroso por dentro.')">Saiba mais</button></td>
+            </tr>
+            <tr>
+                <td>Salgado</td>
+                <td>Esfirra</td>
+                <td>Um sabbr maravilhoso</td>
+                <td>R$ 3,00</td>
+                <td><button class="comprar" data-produto="Salgados" data-preco="3.00">Comprar</button></td>
+                <td>  <button onclick="alert('A clássica esfirra que todo mundo ama! Feita com uma massa fininha e levemente crocante, recheada com carne moída suculenta e temperada com especiarias selecionadas. Prática, saborosa e perfeita para saciar a fome com aquele gostinho de quero mais.')">Saiba mais</button></td>
+            </tr>
+            <tr>
+                <td>Salgados</td>
+                <td>Coxinha</td>
+                <td>Sinta os sabores da coxinha</td>
+                <td>R$ 4,00</td>
+                <td><button class="comprar" data-produto="Coxinha" data-preco="4.00">Comprar</button></td>
+                <td>  <button onclick="alert('Imagine aquele momento: você morde e ouve o CRUNCH característico da massa dourada, que abre caminho para um recheio cremoso, suculento e perfeitamente temperado. Assim é a nossa coxinha! Elaborada com ingredientes selecionados, cada mordida é uma experiência que vai te transportar para o sabor caseiro das melhores festas. Simplesmente impossível comer só uma!')">Saiba mais</button></td>
+            </tr>
+            <tr>
+                <td>Massa</td>
+                <td>Pão Francês</td>
+                <td>Pão fresco para dias das manhã</td>
+                <td>R$ 0,50</td>
+                <td><button class="comprar" data-produto="Pão Francês" data-preco="0.50">Comprar</button></td>
+                <td>  <button onclick="alert('O pão francês, também conhecido como pão de sal ou cacetinho, é um ícone das padarias brasileiras e indispensável no dia a dia. Com sua casca dourada, crocante e farinada, e o miolo macio e levemente adocicado, ele é perfeito para acompanhar qualquer refeição.')">Saiba mais</button></td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="carrinho">
+        <h2>Seu carrinho</h2>
+        <ul id="listaCarrinho"></ul>
+        <p><strong>Total:</strong> R$ <span id="totalCarrinho">0,00</span></p>
+        <button id="removerTodos">Limpar carrinho</button>
+    </section>
+
+    <section id="padaria">
+        <h2>Calculadora de itens</h2>
+        <section>
+            <label>Quantidade de pães:
+                <input type="number" id="qtdpao" value="0" min="0">
+            </label>
+            <button onclick="calcularItem('pao', '0.50', 'qtdpao', 'taxa')">Calcular</button>
+            <p id="taxa"></p>
+        </section>
+    </section>
+
+    <section>
+        <h3>⏰Horários</h3>
+        <table border="1">
+            <tr>
+                <th>Segunda-feira</th>
+                <th>Terça-feira</th>
+                <th>Quarta-feira</th>
+                <th>Quinta-feira</th>  
+                <th>Sexta-feira</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+            </tr>  
+            <tr>
+                <td>🔒Fechado</td>
+                <td>6h às 22h</td>
+                <td>6h às 22h</td>
+                <td>6h às 22h</td>
+                <td>7h às 20h</td>
+                <td>7h às 12:30</td>
+                <td>6h às 13h</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Video institucional</h3>
+        <iframe width="779" height="470" src="https://www.youtube.com/embed/QP_H8A06BGo" title="Modelo de Vídeo Institucional para Padaria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section>
+        <h4>☕Especialidades☕</h4>
+        <ul>
+            <li>PÃES ARTESANAIS E PÃES  DE QUEIJOS</li>
+           
+        </ul>
+    </section>
+
+    <footer>
+        <p>Todos os direitos reservados 2025</p>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5519986080910" target="_blank" class="whatsapp-btn">
+            <img src="image/Novo logo de contato.webp" alt="WhatsApp">
+        </a>
+    </footer>
+
+    <a href="#" class="btn-voltar">🏚️</a>
+    <button id="btnTopo">↑ Topo</button>
+
+    <script src = "style.js"></script>
+    <script>
+        window.onscroll = function() {
+            var btnTopo = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        };
+
+        document.getElementById("btnTopo").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Feedback</title>
+</head>
+<body>
+    <form id="formfeedback">
+
+        <h1>Nome</h1>
+        <input type="text" id="nome" name="nome" placeholder="Insira o seu nome...">
+
+        <h2>E-mail</h2>
+        <input type="email" id="email" name="email" placeholder="Insira o seu e-mail..."><br><br>
+
+        <h2>Telefone</h2>
+        <input type="tel" id="telefone" name="telefone" placeholder="Insira o seu telefone..."><br><br>
+
+        <fieldset>
+            <legend>Produto/Serviço</legend>
+            <select id="produtoServico" name="produtoServico">
+                <option value="Salgados">Salgados</option>
+                <option value="Sabor">Sabor</option>
+                <option value="Pães">Pães</option>
+                <option value="atendimento">Atendimento</option>
+                <option value="tempo de entrega">Tempo de entrega</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Avaliação geral</legend>
+            <label><input type="radio" name="avaliacao_geral" value="satisfeito">Satisfeito</label><br>
+            <label><input type="radio" name="avaliacao_geral" value="regular">Regular</label><br>
+            <label><input type="radio" name="avaliacao_geral" value="insatisfeito">Insatisfeito</label><br>
+        </fieldset>
+         <fieldset>
+    <legend>Comentários</legend>
+    <textarea name="comentarios" placeholder="Deixe seus comentários aqui..." rows="4"></textarea>
+  </fieldset>
+</form>
+
+        <button type="submit">Enviar</button><br><br>
+    </form>
+
+    <a href="index.html" class="btn-voltar">🏚️</a>
+    <button id="btnTopo">↑ Topo</button>
+
+     <script src="whatsapp-forms.js"></script>
+    <script>
+        window.onscroll = function() {
+            var btnTopo = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        };
+
+        document.getElementById("btnTopo").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+<body>
+    <form>
+        <h1>Cadastro</h1>
+        
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome..." required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Insira o seu E-mail..." required><br><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Insira o seu Telefone..." required><br><br>
+
+            <label for="dataNascimento">Data de nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+            
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" placeholder="Insira o nome da rua..." required><br><br>
+
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" name="numero" placeholder="Insira o número da sua casa..." required><br><br>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Insira o nome do bairro..." required><br><br>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="Insira o seu CEP..." pattern="[0-9]{5}-[0-9]{3}"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferência</legend>
+            
+            <h3>Tipos de produtos favoritos</h3>
+            
+            <input type="checkbox" id="Coxinha" name="preferencia" value="Coxinha">
+            <label for="salgados">Salgados</label>
+            
+            <input type="checkbox" id="PãoQueijo" name="preferencia" value="PãoQueio">
+            <label for="doces">Doces</label>
+            
+            <input type="checkbox" id="Esfirra" name="preferencia" value="Esfirra">
+            <label for="bolos">Bolos</label>
+            
+            <input type="checkbox" id="Pastel" name="preferencia" value="Pastel">
+            <label for="bebidas">Bebidas</label>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Termos</legend>
+            
+            <input type="checkbox" id="promocoesEmail" name="termos" value="promocoesEmail" required>
+            <label for="promocoesEmail">Aceita usar os seus dados</label><br>
+            
+            <input type="checkbox" id="termosUso" name="termos" value="termosUso" required>
+            <label for="termosUso">Aceita os termos de uso</label><br><br>
+            
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    
+    <a href="index.html" class="btn-voltar">🏚️</a>
+    <button id="btnTopo">Voltar ao topo</button>
+
+    <script src="whatsapp-forms.js"></script>
+    <script>
+        window.onscroll = function() {
+            var btnTopo = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        };
+
+        document.getElementById("btnTopo").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>

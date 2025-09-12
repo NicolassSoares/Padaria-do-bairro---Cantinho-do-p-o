@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="image/Contato geral.png">
+    <title>Contato geral</title>
+</head>
+<body>
+    <form id="Form-contato">
+        <h1>Informações gerais</h1>
+        
+        <fieldset>
+            <legend>Dados de Contato</legend>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome..." required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Insira o seu E-mail..." required><br><br>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Insira o seu endereço..." required><br><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Insira o seu Telefone..." required><br><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Mensagem</legend>
+            
+            <label for="assunto">Assunto:</label>  
+            <select id="assunto" name="assunto">
+                <option value="Elogios">Elogios</option>
+                <option value="Sugestoes">Sugestões</option>
+                <option value="Reclamacoes">Reclamações</option>
+                <option value="Duvidas">Dúvidas</option>
+                <option value="Outros">Outros</option>
+            </select><br><br>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <a href="index.html" class="btn-voltar">🏚️</a>
+    <button id="btnTopo">Voltar ao topo</button>
+
+    <script src="whatsapp-forms.js"></script>
+    <script>
+        window.onscroll = function() {
+            var btnTopo = document.getElementById("btnTopo");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        };
+
+        document.getElementById("btnTopo").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>
